@@ -1,11 +1,18 @@
 // //88 a) b) 80.	Дано натуральное число n.
 // а) Выяснить, входить ли цифра 3 в запись числа n 2
 const num = Math.floor(Math.random() * 100);
-const ss = (arg) => {
+
+const checkIfTree = (arg) => {
   let arg2 = arg * arg;
-  return arg2 % 10 == 3;
+  const arrayOfDigits = Array.from(String(arg2), Number);
+  console.log(arg2);
+  for (let i = 0; i < arrayOfDigits.length; i++) {
+    if (arrayOfDigits[i] == 3) return true;
+  }
 };
-console.log("Чи входить число в запис числа n2", ss(num));
+
+console.log("Чи входить число 3 в запис числа n2?", checkIfTree(num));
+
 // б) Поменять порядок цифр числа n на обратный.
 const reverseNum = (arg) => {
   arg = arg + "";
